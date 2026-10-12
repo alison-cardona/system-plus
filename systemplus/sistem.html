@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub - Cursos</title>
+    <link rel="stylesheet" href="sistem.css">
+</head>
+<body>
+
+    
+    <section id="login" class="login-container">
+        <div class="login-box">
+            <h1>SYSTEM PLUS</h1>
+            <img src="logo.png" alt="logo" 
+            style="width: 150px;
+            height: 150px;
+            object-fit: contain;
+            display: block;
+            margin: 10px auto;">
+            <p>Inicia sesión para aprender</p>
+
+            <form id="loginForm">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario"
+                       placeholder="Ingresa tu usuario" required>
+
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena"
+                       placeholder="Ingresa tu contraseña" required>
+
+                <button type="submit">Iniciar sesión</button>
+                <p id="error" class="error"></p>
+            </form>
+        </div>
+    </section>
+
+    
+    <section id="dashboard" hidden>
+        <header class="navbar">
+            <h2>SYSTEM PLUS</h2>
+            <button id="cerrarSesion">Cerrar sesión</button>
+        </header>
+
+        <main class="contenido">
+            <div class="bienvenida">
+                <h1>¡Bienvenido a la interfaz principal!</h1>
+                <p>Explora nuestros cursos y continúa aprendiendo.</p>
+            </div>
+
+            <h2 class="titulo-cursos">Mis cursos</h2>
+
+            <div class="cursos">
+
+                <article class="curso">
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600"
+                        alt="Computador para programación">
+                    <div class="curso-info">
+                        <h3>Programación Web</h3>
+                        <p>Aprende los fundamentos de HTML, CSS y JavaScript.</p>
+                        <button onclick="estudiarCurso('Programación Web')">
+                            Estudiar curso
+                        </button>
+                    </div>
+                </article>
+
+                <article class="curso">
+                    <img
+                        src="https://aprender.buzzero.com/buzzers/rogerio-zuniga/70210/HotSiteImage.jpg"
+                        alt="Estudio de tecnología">
+                    <div class="curso-info">
+                        <h3>Informática Básica</h3>
+                        <p>Conoce los conceptos esenciales de la informática.</p>
+                        <button onclick="estudiarCurso('Informática Básica')">
+                            Estudiar curso
+                        </button>
+                    </div>
+                </article>
+
+                <article class="curso">
+                    <img
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600"
+                        alt="Persona estudiando">
+                    <div class="curso-info">
+                        <h3>Marketing Digital</h3>
+                        <p>Descubre cómo promocionar productos en internet.</p>
+                        <button onclick="estudiarCurso('Marketing Digital')">
+                            Estudiar curso
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            
+
+            <section id="cursoDetalle" hidden>
+                <button id="volverCursos">← Volver al dashboard</button>
+
+                <h1 id="tituloCurso"></h1>
+                <p id="descripcionCurso"></p>
+
+                <h3>Tu progreso</h3>
+                <div class="barra-progreso">
+                    <div id="progreso" class="progreso"></div>
+                </div>
+                <p id="porcentaje">0% completado</p>
+
+                <h2>Lecciones del curso</h2>
+                <div id="listaLecciones"></div>
+            </section>
+
+        </main>
+    </section>
+
+    <script src="sistem.js"></script>
+</body>
+</html>
